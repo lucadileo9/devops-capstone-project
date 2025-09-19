@@ -128,7 +128,7 @@ class TestAccountService(TestCase):
         """It should Read a single Account"""
         # Crea un account di test
         test_account = self._create_accounts(1)[0]
-        
+
         # Prova a leggere l'account
         resp = self.client.get(f"{BASE_URL}/{test_account.id}")
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
@@ -165,7 +165,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         updated_account = resp.get_json()
         self.assertEqual(updated_account["name"], "Something Known")
-    
+
     def test_delete_account(self):
         """It should Delete an Account"""
         account = self._create_accounts(1)[0]
