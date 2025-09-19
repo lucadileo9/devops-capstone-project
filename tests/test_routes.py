@@ -132,7 +132,7 @@ class TestAccountService(TestCase):
         # Prova a leggere l'account
         resp = self.client.get(f"{BASE_URL}/{test_account.id}")
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
-        
+
         # Verifica i dati restituiti
         data = resp.get_json()
         self.assertEqual(data["name"], test_account.name)
